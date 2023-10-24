@@ -18,7 +18,7 @@
       },
       {
         "color": "red",
-        "category": "hue",
+        "category": "hue2",
         "type": "primary",
         "code": {
           "rgba": [255,0,0,1],
@@ -27,7 +27,7 @@
       },
       {
         "color": "blue",
-        "category": "hue",
+        "category": "hue3",
         "type": "primary",
         "code": {
           "rgba": [0,0,255,1],
@@ -36,7 +36,7 @@
       },
       {
         "color": "yellow",
-        "category": "hue",
+        "category": "hue4",
         "type": "primary",
         "code": {
           "rgba": [255,255,0,1],
@@ -45,7 +45,7 @@
       },
       {
         "color": "green",
-        "category": "hue",
+        "category": "hue5",
         "type": "secondary",
         "code": {
           "rgba": [0,255,0,1],
