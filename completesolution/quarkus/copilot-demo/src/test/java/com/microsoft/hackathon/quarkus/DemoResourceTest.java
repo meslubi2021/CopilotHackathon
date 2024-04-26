@@ -2,7 +2,6 @@ package com.microsoft.hackathon.quarkus;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 
@@ -197,4 +196,31 @@ public class DemoResourceTest {
              .statusCode(500);
     }
 
+    // New REST API tests using RestAssured
+    @Test
+    public void testGetAllColorsEndpoint() {
+        given()
+          .when().get("/colors")
+          .then()
+             .statusCode(200)
+             .body("$.size()", is(6));
+    }
+
+    @Test
+    public void testGetColorByNameEndpoint() {
+        given()
+          .when().get("/colors/name/blue")
+          .then()
+             .statusCode(200)
+             .body("name", is("blue"))
+             .body("hex", is("#0000FF"));
+    }
+
+    @Test
+    public void testGetColorByNameNotFoundEndpoint() {
+        given()
+          .when().get("/colors/name/purple")
+          .then()
+             .statusCode(404);
+    }
 }
