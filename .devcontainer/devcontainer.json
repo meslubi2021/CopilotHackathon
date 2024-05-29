@@ -51,3 +51,34 @@
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"	
 }
+
+// Adding new changes
+{
+	"name": "GitHub Copilot Hackathontest",
+	//test
+	"image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+			"nodeGypDependencies": true,
+			"version": "lts"
+		},
+		
+		"ghcr.io/devcontainers/features/python:1": {
+			"version": "3.8"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"redhat.vscode-yaml",
+				"GitHub.vscode-github-actions",
+				"ms-azuretools.vscode-docker",
+				"ms-dotnettools.csdevkit",
+				"vscjava.vscode-java-pack",
+				"ms-toolsai.jupyter",
+				"ms-python.python"
+			]
+		}
+	},
