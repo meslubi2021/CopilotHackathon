@@ -1,6 +1,6 @@
 # GitHub Copilot Hackathon
 
-Demo project for running labs to evaluate Copilot viability
+Demo project for running labs to evaluate Copilot viability.
 
 - [Goal](#goal)
 - [Pre-requisites](#pre-requisites)
