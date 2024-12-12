@@ -193,7 +193,12 @@ public class DemoController {
     @GetMapping("/zip-folder")
     public ResponseEntity<Resource> zipFolder(@RequestParam(name = "path") String pathString) {
         try {
-            File folder = new File(pathString);
+            Path baseDir = Paths.get("/safe/base/directory").normalize().toAbsolutePath();
+            Path folderPath = baseDir.resolve(pathString).normalize().toAbsolutePath();
+            if (!folderPath.startsWith(baseDir)) {
+                return ResponseEntity.badRequest().body(null);
+            }
+            File folder = folderPath.toFile();
             if (!folder.exists()) {
                 return ResponseEntity.notFound().build();
             }
